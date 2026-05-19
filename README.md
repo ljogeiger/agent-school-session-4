@@ -69,7 +69,7 @@ To showcase these patterns to clients using the premium graphical UI, ensure you
 adk web
 ```
 
-Access the UI at **http://127.0.0.1:8000** to interactively test and demonstrate all seven patterns!
+Access the UI at **http://localhost:8000** to interactively test and demonstrate all seven patterns!
 
 ---
 
@@ -88,3 +88,5 @@ When speaking with enterprise clients about Multi-Agent Systems, focus on these 
 
 4. **"How do you maintain governance and prevent AI agents from taking unauthorized high-risk actions?"**
    - *Positioning*: Explain how the **Human-in-the-Loop Pattern** integrates policy gates, pausing agent execution before sensitive operations to request explicit human review.
+
+Source: https://adk.dev/agents/multi-agents/
