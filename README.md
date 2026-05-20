@@ -64,6 +64,8 @@ This repository provides complete, runnable ADK implementations of seven fundame
 
 To showcase these patterns to clients using the premium graphical UI, ensure you are using a virtual environment with google-adk and launch the dev UI server:
 
+For the best experience - please use google-adk version 2.0.0.
+
 ```bash
 # Start the ADK Web Server
 adk web
