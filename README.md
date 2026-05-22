@@ -28,35 +28,50 @@ This repository provides complete, runnable ADK implementations of seven fundame
 - **How it Works**: It interprets ambiguous user intent and dynamically delegates execution to the correct specialist.
 - **Value**: Excellent for Customer Service Portals, IT Helpdesks, and Multi-domain Virtual Assistants.
 
+Starter prompt: "Hi, how do I reset my password?"
+
 ### 2. Sequential Pipeline Pattern
 - **Concept**: An orchestrator (`SequentialAgent`) executes a series of sub-agents in a strictly predefined order.
 - **How it Works**: Agents share the same `InvocationContext` and pass structured data sequentially via shared session state.
 - **Value**: Ideal for Data ETL pipelines, Document Processing workflows, and Multi-stage Code Auditing.
+
+Starter prompt: "Start"
 
 ### 3. Parallel Fan-out / Gather Pattern
 - **Concept**: An orchestrator (`ParallelAgent`) triggers multiple sub-agents to run concurrently on distinct context branches.
 - **How it Works**: Sub-agents perform independent tasks simultaneously, reducing latency, followed by a synthesis step.
 - **Value**: Crucial for Executive Briefings, Comprehensive Research / Threat Analysis, and Multi-source Intelligence Gathering.
 
+Starter prompt: "Hi what is my daily news report for today?"
+
 ### 4. Hierarchical Task Decomposition
 - **Concept**: A multi-level parent_agent/sub_agents tree where higher-level agents break down complex goals and delegate tasks.
 - **How it Works**: Parent agents use `AgentTool` to invoke child agents as tools. Results flow back up the tree for synthesis.
 - **Value**: Perfect for structured content writing, large-scale software design, and highly complex problem decomposition.
+
+Starter prompt: "Hi write me an article on penguins."
 
 ### 5. Review / Critique Pattern (Generator-Critic)
 - **Concept**: A sequential workflow pairing a Generator that drafts content and a Reviewer/Critic that evaluates the output.
 - **How it Works**: Generator saves to `"draft_text"`; Reviewer fact-checks `"draft_text"` and sets `"review_status"`.
 - **Value**: Enforces strict quality assurance, formatting compliance, and factual accuracy in automated content workflows.
 
+Starter prompt: "Write me a story about a young boy and his pet giraffe, Alonzo."
+
 ### 6. Iterative Refinement Pattern
 - **Concept**: LoopAgent contains generator and checker agents executing repeatedly over a task until a threshold is met.
 - **How it Works**: The generator writes code and uses `BuiltInCodeExecutor` to self-verify. The checker reviews and the loop stops once quality passes.
 - **Value**: Essential for automated code refinement, document polishing, and self-correcting automation tasks.
 
+Starter prompt: "Please write me a python function that calculates the factorial of a number."
+
 ### 7. Human-in-the-Loop (HITL) Pattern
 - **Concept**: Integrates human intervention, oversight, or approval points within an agent workflow.
 - **How it Works**: A tool is invoked which asynchronously waits or requests human input. The workflow pauses and resumes only upon receiving approval.
 - **Value**: Crucial for high-risk transactions, spend approval systems, infrastructure deletions, and administrative governance.
+
+Starter prompt: "Help me approve a business expense."
+Follow up: "5M and 'I wanted a yacht for the team'"
 
 ---
 

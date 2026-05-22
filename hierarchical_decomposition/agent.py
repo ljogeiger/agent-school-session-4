@@ -21,7 +21,7 @@ fact_fetcher = agents.Agent(
     name="FactFetcher",
     model=MODEL_NAME,
     description="Performs research and extracts key factual data about a historical event.",
-    instruction="You are a Fact Fetcher Agent. Extract key factual bullet points about the California Gold Rush. Focus purely on dates, locations, and milestones.",
+    instruction="You are a Fact Fetcher Agent. Extract key factual bullet points about the requested topic. Focus purely on dates, locations, and milestones.",
 )
 
 # Low-level tool-like agent for generating structures
@@ -37,7 +37,7 @@ research_assistant = agents.Agent(
     name="ResearchAssistant",
     model=MODEL_NAME,
     description="Finds facts and organizes them into a structured outline.",
-    instruction="Identify key facts about the California Gold Rush using FactFetcher, and then organize them using Outliner.",
+    instruction="Identify key facts about the the requested topic using FactFetcher, and then organize them using Outliner.",
     tools=[
         agent_tool.AgentTool(agent=fact_fetcher),
         agent_tool.AgentTool(agent=outliner),
@@ -49,7 +49,7 @@ root_agent = agents.Agent(
     name="root_agent",
     model=MODEL_NAME,
     description="A premium narrative writer that writes reports.",
-    instruction="Write a comprehensive, engaging historical report on the California Gold Rush. Use the ResearchAssistant to gather facts and get a structured outline first.",
+    instruction="Write a comprehensive, engaging historical report on the requested topic. Use the ResearchAssistant to gather facts and get a structured outline first.",
     tools=[
         agent_tool.AgentTool(agent=research_assistant),
     ]
